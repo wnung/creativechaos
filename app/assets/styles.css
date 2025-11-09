@@ -1,0 +1,66 @@
+/* Creative Chaos v2 — Professional theme */
+:root{
+  --bg:#0c1222; --surface:#121a2e; --muted-surface:#0f1628; --elev:#16223d;
+  --border:#223357; --text:#EAF0FF; --muted:#A9B7D9; --brand:#E3C15C; --brand-ink:#1a1a1a;
+  --success:#44C07A; --danger:#e15c64; --focus:#8fb3ff; --radius:16px; --shadow:0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background: radial-gradient(1200px 600px at 100% -10%, rgba(227,193,92,.10), transparent), linear-gradient(180deg,#0b1120,#0e1830 45%,#0b1220);
+  color:var(--text);
+}
+img{max-width:100%;display:block}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+.header-wrap{position:sticky;top:0;z-index:50;background:rgba(12,18,34,.7);backdrop-filter: blur(8px); border-bottom:1px solid var(--border)}
+.nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 24px}
+.brand{display:flex;gap:12px;align-items:center}
+.brand img{width:36px;height:36px}
+.brand h1{font-size:18px;margin:0;letter-spacing:.3px;font-weight:700}
+.menu{display:flex;gap:8px;flex-wrap:wrap}
+.menu a{padding:8px 12px;border-radius:10px}
+.menu a:hover{background:var(--muted-surface)}
+.hero{padding:56px 24px;border-bottom:1px solid var(--border)}
+.hero h2{font-size:40px;margin:0 0 10px;line-height:1.1;letter-spacing:.2px}
+.hero p{color:var(--muted);max-width:70ch;margin:8px 0 0}
+.hero .cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:24px 0}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px; box-shadow:var(--shadow)}
+.card h3{margin:0 0 10px;font-size:18px}
+.card p{color:var(--muted)}
+.btn{display:inline-flex;gap:8px;align-items:center;justify-content:center;font-weight:700;
+  background:var(--brand);color:var(--brand-ink);padding:11px 16px;border-radius:12px;border:1px solid rgba(0,0,0,.15)}
+.btn:hover{filter:brightness(1.04)}
+.btn.outline{background:transparent;color:var(--text);border:1px solid var(--border)}
+input,select,textarea{width:100%;padding:12px;border-radius:12px;border:1px solid var(--border);background:#0f1729;color:var(--text);outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--focus); box-shadow:0 0 0 3px rgba(143,179,255,.25)}
+label{font-weight:600;margin-top:12px;display:block}
+form{display:grid;gap:12px}
+.help{font-size:.9em;color:var(--muted)}
+.required::after{content:" *";color:var(--brand)}
+.table{width:100%;border-collapse:separate;border-spacing:0 6px}
+.table thead th{font-size:.92em;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.table tr{background:var(--surface);border:1px solid var(--border)}
+.table th,.table td{padding:12px 14px;text-align:left}
+.table tr td:first-child,.table tr th:first-child{border-top-left-radius:12px;border-bottom-left-radius:12px}
+.table tr td:last-child,.table tr th:last-child{border-top-right-radius:12px;border-bottom-right-radius:12px}
+.alert{background:#102039;border:1px solid #2a3e6a;padding:12px;border-radius:10px;color:var(--muted)}
+.flash{animation:fadeout 0.5s ease 3.5s forwards}
+@keyframes fadeout{to{opacity:0;transform:translateY(-6px)}}
+.footer{padding:28px;color:var(--muted);text-align:center;border-top:1px solid var(--border);margin-top:32px}
+.badge{background:#0f1729;border:1px solid var(--border);padding:6px 10px;border-radius:999px;font-size:.92em}
+blockquote{margin:0;padding:12px 14px;border-left:4px solid var(--brand);background:#0f1729;border-radius:8px}
+.flex{display:flex;gap:12px;flex-wrap:wrap}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.pill{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid var(--border);background:#0f1729}
+.small{font-size:.9em;color:var(--muted)}
+.tag{font-size:.85em;border:1px solid var(--border);padding:2px 8px;border-radius:999px;background:rgba(255,255,255,.04)}
+.price{font-weight:800}
+
+.alert.success{border-color:#2f7a4f;background:#102a1d;color:#bde6c8}
+
+.btn{pointer-events:auto}
+
+
