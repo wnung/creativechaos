@@ -232,8 +232,8 @@ if ($want === 'team') {
 <main class="container cc-wrap">
   <div class="card">
     <div class="tabs">
-      <a class="tab <?php echo $want==='team'?'active':''; ?>" href="<?php echo h(cc_url('register.php')); ?>?type=team">School Team Registration</a>
-      <a class="tab <?php echo $want==='open'?'active':''; ?>" href="<?php echo h(cc_url('register.php')); ?>?type=open">Open Class Registration</a>
+      <a class="tab <?php echo $want==='team'?'active':''; ?>" href="<?php echo h(cc_url('register.php')); ?>?type=team">Team Registration</a>
+      <a class="tab <?php echo $want==='open'?'active':''; ?>" href="<?php echo h(cc_url('register.php')); ?>?type=open">Open Registration</a>
     </div>
 
     <?php foreach ($errors as $e): ?>
@@ -281,7 +281,7 @@ if ($want === 'team') {
             <input class="form-control" id="writer_count" type="number" name="writer_count" min="1" max="20" value="<?php echo h($team_writer_count); ?>" required>
           </div>
           <div class="cc-3" style="display:flex;align-items:flex-end;">
-            <span class="pill">Base $<?php echo $TEAM_BASE_PRICE; ?> (includes up to <?php echo $TEAM_BASE_INCLUDED; ?> writers; alternates $<?php echo $TEAM_EXTRA_PRICE; ?> each)</span>
+            <span class="pill">Base $<?php echo $TEAM_BASE_PRICE; ?> (includes up to <?php echo $TEAM_BASE_INCLUDED; ?>)</span>
           </div>
           <div class="cc-12">
             <label>Writer Names</label>
@@ -317,7 +317,7 @@ if ($want === 'team') {
               }
             ?>
           </div>
-          <p><strong>Total:</strong> <output id="open-total-fee"><?php echo '$'.number_format($open_fee, 2); ?></output> <small>&nbsp;($<?php echo $OPEN_PRICE_PER; ?> per writer)</small></p>
+          <p><strong>Total:</strong> <output id="open-total-fee"><?php echo '$'.number_format($open_fee, 2); ?></output></p>
           <button id="add-open-writer" type="button" class="btn outline">+ Add Registrant</button>
         </div>
       <?php endif; ?>
