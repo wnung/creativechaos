@@ -16,7 +16,7 @@
     var openList = q('#open-writer-list');
     var addOpen = q('#add-open-writer');
 
-    var teamBase=100, teamIncluded=7, teamExtra=10, openPrice=10;
+    var teamBase=100, teamIncluded=7, teamExtra=10, openPrice=20;
 
     function toggleRequired(isTeam){
       var tName = q('[name="team_name"]'), tSchool=q('[name="school"]'), tEmail=q('[name="guardian_email"]');

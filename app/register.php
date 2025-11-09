@@ -6,7 +6,8 @@ require_once __DIR__.'/inc/functions.php';
  * Creative Chaos — Schema-aware Registration
  * - Uses db.php (cc_db()) for PDO.
  * - Writes to `registrations` and `registration_writers` per provided schema.
- * - 7 writers included for team; +$10 each beyond 7. Open = $10/person.
+ * - 7 writers included for team; +$10 each beyond 7 (alternate writers).
+ * - Open Class registrations charged at $20 per writer.
  * - POST handled before any output; redirects to Givebutter on success.
  * - Falls back to JSONL and writes diagnostics if DB is unavailable.
  */
@@ -16,7 +17,7 @@ $GIVEBUTTER_URL = 'https://givebutter.com/TVChaosWriting';
 $TEAM_BASE_INCLUDED = 7;
 $TEAM_BASE_PRICE    = 100;
 $TEAM_EXTRA_PRICE   = 10;
-$OPEN_PRICE_PER     = 10;
+$OPEN_PRICE_PER     = 20;
 
 $DATA_DIR   = __DIR__ . '/data';
 $LOG_FILE   = $DATA_DIR . '/submit.log';
@@ -332,6 +333,7 @@ if ($want === 'team') {
   const BASE_INCLUDED = <?php echo (int)$TEAM_BASE_INCLUDED; ?>;
   const BASE_PRICE = <?php echo (int)$TEAM_BASE_PRICE; ?>;
   const EXTRA_PRICE = <?php echo (int)$TEAM_EXTRA_PRICE; ?>;
+  const OPEN_PRICE = <?php echo (int)$OPEN_PRICE_PER; ?>;
   function teamInit(){
     const list = document.getElementById('writer-list');
     const countInput = document.getElementById('writer_count');
@@ -366,7 +368,7 @@ if ($want === 'team') {
     const feeOut = document.getElementById('open-total-fee');
     if (!list || !feeOut) return;
     const rows = list.querySelectorAll('.cc-rowline');
-    feeOut.textContent = money(rows.length * 10);
+    feeOut.textContent = money(rows.length * OPEN_PRICE);
   }
   function openInit(){
     const list = document.getElementById('open-writer-list');
